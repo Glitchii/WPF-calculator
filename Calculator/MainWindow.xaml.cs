@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,13 +26,13 @@ namespace Calculator {
         private void closeBTN_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) { Environment.Exit(0); }
         private void topDrag(object sender, MouseButtonEventArgs e) { DragMove(); }
         private void winLoaded(object sender, RoutedEventArgs e) {
-
+            
         }
 
         private void closeBTN_MouseEnter(object sender, MouseEventArgs e) { closeBTN.Opacity=.6; closeBTN.Background=(Brush)new BrushConverter().ConvertFrom("#FF343436"); }
         private void closeBTN_MouseLeave(object sender, MouseEventArgs e) { closeBTN.Opacity=.3; closeBTN.Background=(Brush)new BrushConverter().ConvertFrom("#FF242426"); }
 
-        string emptyNum1 = "";
+        string defaultOutputBoxText = "Standard calculator";
         long num1 = 0;
         long num2 = 0;
         string operation = "";
@@ -86,120 +86,132 @@ namespace Calculator {
 
         private void btn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
             if(operation=="") {
-                num1=(num1*10); display.Text=num1.ToString(); emptyNum1=$"{num1}"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num1=(num1*10); display.Text=num1.ToString(); clarifier.Text=$"{num1.ToString()} {operation.Replace("*", "×").Replace("/", "÷")} {(num2==0 ? "" : num2.ToString())}";;
             } else {
-                num2=(num2*10); display.Text=num2.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num2=(num2*10); display.Text=num2.ToString(); clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+num2.ToString();
             }
         }
         private void btn1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
             if(operation=="") {
-                num1=(num1*10)+1; display.Text=num1.ToString(); emptyNum1=$"{num1}"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num1=(num1*10)+1; display.Text=num1.ToString(); clarifier.Text=$"{num1.ToString()} {operation.Replace("*", "×").Replace("/", "÷")} {(num2==0 ? "" : num2.ToString())}";;
             } else {
-                num2=(num2*10)+1; display.Text=num2.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num2=(num2*10)+1; display.Text=num2.ToString(); clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+num2.ToString();
             }
         }
         private void btn2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
             if(operation=="") {
-                num1=(num1*10)+2; display.Text=num1.ToString(); emptyNum1=$"{num1}"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num1=(num1*10)+2; display.Text=num1.ToString(); clarifier.Text=$"{num1.ToString()} {operation.Replace("*", "×").Replace("/", "÷")} {(num2==0 ? "" : num2.ToString())}";;
             } else {
-                num2=(num2*10)+2; display.Text=num2.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num2=(num2*10)+2; display.Text=num2.ToString(); clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+num2.ToString();
             }
         }
         private void btn3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
             if(operation=="") {
-                num1=(num1*10)+3; display.Text=num1.ToString(); emptyNum1=$"{num1}"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num1=(num1*10)+3; display.Text=num1.ToString(); clarifier.Text=$"{num1.ToString()} {operation.Replace("*", "×").Replace("/", "÷")} {(num2==0 ? "" : num2.ToString())}";;
             } else {
-                num2=(num2*10)+3; display.Text=num2.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num2=(num2*10)+3; display.Text=num2.ToString(); clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+num2.ToString();
             }
         }
         private void btn4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
             if(operation=="") {
-                num1=(num1*10)+4; display.Text=num1.ToString(); emptyNum1=$"{num1}"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num1=(num1*10)+4; display.Text=num1.ToString(); clarifier.Text=$"{num1.ToString()} {operation.Replace("*", "×").Replace("/", "÷")} {(num2==0 ? "" : num2.ToString())}";;
             } else {
-                num2=(num2*10)+4; display.Text=num2.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num2=(num2*10)+4; display.Text=num2.ToString(); clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+num2.ToString();
             }
         }
         private void btn5_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
             if(operation=="") {
-                num1=(num1*10)+5; display.Text=num1.ToString(); emptyNum1=$"{num1}"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num1=(num1*10)+5; display.Text=num1.ToString(); clarifier.Text=$"{num1.ToString()} {operation.Replace("*", "×").Replace("/", "÷")} {(num2==0 ? "" : num2.ToString())}";;
             } else {
-                num2=(num2*10)+5; display.Text=num2.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num2=(num2*10)+5; display.Text=num2.ToString(); clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+num2.ToString();
             }
         }
         private void btn6_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
             if(operation=="") {
-                num1=(num1*10)+6; display.Text=num1.ToString(); emptyNum1=$"{num1}"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num1=(num1*10)+6; display.Text=num1.ToString(); clarifier.Text=$"{num1.ToString()} {operation.Replace("*", "×").Replace("/", "÷")} {(num2==0 ? "" : num2.ToString())}";;
             } else {
-                num2=(num2*10)+6; display.Text=num2.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num2=(num2*10)+6; display.Text=num2.ToString(); clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+num2.ToString();
             }
         }
         private void btn7_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
             if(operation=="") {
-                num1=(num1*10)+7; display.Text=num1.ToString(); emptyNum1=$"{num1}"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num1=(num1*10)+7; display.Text=num1.ToString(); clarifier.Text=$"{num1.ToString()} {operation.Replace("*", "×").Replace("/", "÷")} {(num2==0 ? "" : num2.ToString())}";;
             } else {
-                num2=(num2*10)+7; display.Text=num2.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num2=(num2*10)+7; display.Text=num2.ToString(); clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+num2.ToString();
             }
         }
         private void btn8_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
             if(operation=="") {
-                num1=(num1*10)+8; display.Text=num1.ToString(); emptyNum1=$"{num1}"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num1=(num1*10)+8; display.Text=num1.ToString(); clarifier.Text=$"{num1.ToString()} {operation.Replace("*", "×").Replace("/", "÷")} {(num2==0 ? "" : num2.ToString())}";;
             } else {
-                num2=(num2*10)+8; display.Text=num2.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num2=(num2*10)+8; display.Text=num2.ToString(); clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+num2.ToString();
             }
         }
         private void btn9_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
             if(operation=="") {
-                num1=(num1*10)+9; display.Text=num1.ToString(); emptyNum1=$"{num1}"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num1=(num1*10)+9; display.Text=num1.ToString(); clarifier.Text=$"{num1.ToString()} {operation.Replace("*", "×").Replace("/", "÷")} {(num2==0 ? "" : num2.ToString())}";;
             } else {
-                num2=(num2*10)+9; display.Text=num2.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num2=(num2*10)+9; display.Text=num2.ToString(); clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+num2.ToString();
             }
         }
         private void btnPower2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
             if(operation=="") {
-                num1=num1*num1; display.Text=num1.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString(); emptyNum1=$"{num1*num1}";
+                num1=num1*num1; display.Text=num1.ToString(); clarifier.Text=$"{num1.ToString()} {operation.Replace("*", "×").Replace("/", "÷")} {(num2==0 ? "" : num2.ToString())}";; 
             } else {
-                num2=num2*num2; display.Text=num2.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num2=num2*num2; display.Text=num2.ToString(); clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+num2.ToString();
             }
         }
         private void btnPercent_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
             if(num1==0&&num2==0) {
                 display.Text="0"; outputs.Text="Click a number before using %. eg. 80% × 10010";
             } else if(operation=="") {
-                num1=num1/100; display.Text=num1.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString(); emptyNum1=$"{num1/100}";
+                num1=num1/100; display.Text=num1.ToString(); clarifier.Text=$"{num1.ToString()} {operation.Replace("*", "×").Replace("/", "÷")} {(num2==0 ? "" : num2.ToString())}";;
             } else if(operation!="") {
-                num2=num2/100; display.Text=num2.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+                num2=num2/100; display.Text=num2.ToString(); clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+num2.ToString();
             }
         }
 
-        private void btnDivide_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) { operation="/"; display.Text="0"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString(); }
-        private void btnTimes_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) { operation="*"; display.Text="0"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString(); }
-        private void btnPlus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) { operation="+"; display.Text="0"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString(); }
-        private void btnMinus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) { operation="-"; display.Text="0"; clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString(); }
-        private void btnC_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) { operation=""; num1=0; num2=0; emptyNum1=""; display.Text="0"; clarifier.Clear(); }
+        private void btnDivide_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) { operation="/"; display.Text="0"; clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+(num2==0 ? "" : num2.ToString()); }
+        private void btnTimes_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) { operation="*"; display.Text="0"; clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+(num2==0 ? "" : num2.ToString()); }
+        private void btnPlus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) { operation="+"; display.Text="0"; clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+(num2==0 ? "" : num2.ToString()); }
+        private void btnMinus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) { operation="-"; display.Text="0"; clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+(num2==0 ? "" : num2.ToString()); }
+        private void btnC_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
+            operation=""; num1=0; num2=0; display.Text="0"; clarifier.Clear(); outputs.Text=defaultOutputBoxText;
+        }
         private void btnCE_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-            if(operation=="") {
-                num1=0; display.Text="0"; emptyNum1="";
-            } else {
-                num2=0; display.Text="0"; emptyNum1="";
+            if(num2!=0) {
+                num2=0; display.Text="0";
+                clarifier.Text=$"{num1} {operation}";
+            } else if(num2==0&&operation!="") {
+                operation=""; display.Text="0";
+                clarifier.Text=$"{num1}";
+            } else if(num2==0&&operation=="") {
+                num1=0; display.Text="0";
+                clarifier.Text="";
             }
         }
         private void backSpace_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-            if(operation=="") {
-                num1=(num1/10); emptyNum1=$"{(num1/10)}"; display.Text=num1.ToString();
-                clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
-            } else {
-                num2=(num2/10); display.Text=num2.ToString(); clarifier.Text=emptyNum1+operation.Replace("*", "×").Replace("/", "÷")+num2.ToString();
+            if(num2!=0) {
+                num2=(num2/10); display.Text=num2.ToString();
+                clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" "+(num2==0 ? "" : num2.ToString());
+            } else if(num2==0&&operation!="") {
+                operation=""; display.Text="0";
+                clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷")+" ";
+            } else if(num2==0&&operation=="") {
+                num1=(num1/10); display.Text=num1.ToString();
+                clarifier.Text=num1.ToString();
             }
         }
         private void btnPoint_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) { }
         private void btnEquals_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
+            if(operation!=""&&num1!=0&&num2==0) {clarifier.Text=num1.ToString()+" "+operation.Replace("*", "×").Replace("/", "÷");} // This line isn't as import but it removes an unwanted space eg. Turns 2 +  = 2 to 2 + = 2. To test this, in the calculator press 2+=
             switch(operation) {
                 case "/": display.Text=(num1/num2).ToString(); clarifier.Text+=" = "+(num1/num2).ToString(); break;
                 case "*": display.Text=(num1*num2).ToString(); clarifier.Text+=" = "+(num1*num2).ToString(); break;
                 case "+": display.Text=(num1+num2).ToString(); clarifier.Text+=" = "+(num1+num2).ToString(); break;
                 case "-": display.Text=(num1-num2).ToString(); clarifier.Text+=" = "+(num1-num2).ToString(); break;
-                case "": display.Text=display.Text; break;
-                default: outputs.Text="There was an error. Press clear and try again."; break;
+                case "": break;
+                default: outputs.Text="There was an error. Press clear and try again."; break; // There is no way this line will be shown unless you changed something but I'll just leave it there.
             }
         }
     }
