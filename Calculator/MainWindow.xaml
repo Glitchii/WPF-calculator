@@ -1,27 +1,27 @@
-﻿<Window x:Class="Calculator.MainWindow"
+<Window x:Class="Calculator.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" Name="win"
-        Title="Calculator" Height="460" Width="340" Background="#242426" ResizeMode="NoResize" Visibility="Visible"
+        Title="Calculator" Height="460" Width="340" Background="#242426" Foreground="White" ResizeMode="NoResize" Visibility="Visible"
         WindowStyle="None" Loaded="winLoaded">
 
     <Border Padding='5 0 5 1' BorderThickness="0">
-        <StackPanel>
-            <Grid Name="windowTop" Background="#242426" MouseLeftButtonDown="topDrag" Height="31" Margin="0,0,-5,0">
+        <StackPanel Margin="-5,0,-5,-1">
+            <Grid Name="winTop" Background="#242426" MouseLeftButtonDown="topDrag" Height="31">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Name="closeBTN" Padding="8.6 0 6.3 0"  Text="×" MouseEnter="closeBTN_MouseEnter" MouseLeave="closeBTN_MouseLeave" MouseLeftButtonDown="closeBTN_MouseLeftButtonDown" FontSize="20" Background="#242426" Foreground="White" Opacity=".3" Grid.Column="1"/>
+                <TextBlock Name="closeBTN" Padding="8.6 0 6.3 0"  Text="×" MouseEnter="closeBTN_MouseEnter" MouseLeave="closeBTN_MouseLeave" MouseLeftButtonDown="closeBTN_MouseLeftButtonDown" FontSize="20" Background="#242426" Foreground="White" Opacity=".3" Margin="1,0,0,0" Grid.Column="1"/>
             </Grid>
 
             <TextBlock Foreground="White" Text="Calculator" Margin="0,5,156,5" Padding="5 0" Opacity=".6" FontSize="16"/>
-            <TextBox TextAlignment="Right" Name="display" Foreground="White" Background="#242426" Text="0" IsReadOnly="True" Padding="10" Margin="0 0 0 5" FontSize="30" BorderThickness="0"/>
+            <TextBox TextAlignment="Right" Name="display" Foreground="White" Background="#FC242426" Text="0" IsReadOnly="True" Padding="10" Margin="0 0 0 5" FontSize="30" BorderThickness="0"/>
             <TextBox Name="clarifier"  Text="" IsReadOnly="True" Background="{x:Null}" Foreground="White" BorderThickness="0" Opacity=".4"/>
 
-            <Grid Margin="0 10" Height="269">
+            <Grid Margin="-1,10" Height="269">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -56,7 +56,7 @@
                 <TextBlock Name="btn9" TextAlignment="Center" Padding="0 15" Margin="1"
                            MouseEnter="btn9_MouseEnter" MouseLeave="btn9_MouseLeave" MouseLeftButtonDown="btn9_MouseLeftButtonDown" Foreground="White" FontSize="17" Background="#FF313334" Text="9" Grid.Column="2"/>
                 <TextBlock Name="btnPoint" TextAlignment="Center" Padding="0 10" Margin="1" Foreground="White" FontSize="17"
-                           MouseEnter="btnPoint_MouseEnter" MouseLeave="btnPoint_MouseLeave" MouseLeftButtonDown="btnPlus_MouseLeftButtonDown" Background="#FF313334" Text="." Grid.Row="3" Grid.Column="2"/>
+                           MouseEnter="btnPoint_MouseEnter" MouseLeave="btnPoint_MouseLeave" MouseLeftButtonDown="btnPoint_MouseLeftButtonDown"  Background="#FF313334" Text="." Grid.Row="3" Grid.Column="2"/>
                 <TextBlock Name="btnPower2" MouseLeftButtonDown="btnPower2_MouseLeftButtonDown"
                            MouseEnter="btnPower2_MouseEnter" MouseLeave="btnPower2_MouseLeave" TextAlignment="Center" Padding="0 15" Margin="1" Foreground="White" FontSize="15" Background="#FF313334" Text="x²" Grid.Row="3" Grid.Column="1"/>
 
