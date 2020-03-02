@@ -19,7 +19,7 @@
 
             <TextBlock Foreground="White" Text="Calculator" Margin="0,5,156,5" Padding="5 0" Opacity=".6" FontSize="16"/>
             <TextBox TextAlignment="Right" Name="display" Foreground="White" Background="#FC242426" Text="0" IsReadOnly="True" Padding="10" Margin="0 0 0 5" FontSize="30" BorderThickness="0"/>
-            <TextBox Name="clarifier"  Text="" IsReadOnly="True" Background="{x:Null}" Foreground="White" BorderThickness="0" Opacity=".4"/>
+            <TextBox Name="clarifier"  Text="" IsReadOnly="True" Padding="4 0" Background="{x:Null}" Foreground="White" BorderThickness="0" Opacity=".4"/>
 
             <Grid Margin="-1,10" Height="269">
                 <Grid.ColumnDefinitions>
